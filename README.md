@@ -15,7 +15,7 @@
 8. ReverseArray
 ![8 ReverseArray](https://github.com/user-attachments/assets/2c81b7ed-ef95-43cd-a57b-1d16958c9b6c)
 9. JSON
-10. 
-11. JSON Example
+
+10. JSON Example
 ![10 JSON(ii)](https://github.com/user-attachments/assets/d2572580-b879-4fc9-905b-72d48cce7c76)
 ![10 FemaleStudents](https://github.com/user-attachments/assets/64406e47-85c3-4e6c-b59c-5296b8357e95)
