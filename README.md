@@ -18,6 +18,6 @@ Click Create Database.
 
 **Using Shell**
 
-~~
+~~~
 use unidb
-~~
+~~~
