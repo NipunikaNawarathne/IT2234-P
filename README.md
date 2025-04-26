@@ -39,4 +39,29 @@ Inside your database, click Create Collection ➡️ Name it **students**.
 db.createCollection("students")
 ~~~
 
+![0 Create Collection](https://github.com/user-attachments/assets/12f73b1e-60bc-4f80-9e3c-3f402ca343af)
+
+**➕ 5. Insert Data**
+
+**Insert One Document**
+
+**Using Compass**
+
+Go to users collection ➡️ Click Insert Document ➡️ Add:
+
+**insertOne** Before Formatting
+![0 6 insertOne Compass](https://github.com/user-attachments/assets/10eefcd2-2cae-48fc-92a8-e9c55bd5cb56)
+
+**insertOne** After Formatting
+![0 6 insertOne Compass After Format](https://github.com/user-attachments/assets/6452b9de-5cf2-4ad5-b1ba-cd988544d770)
+
+
+**Using Shell**
+
+~~~
+db.students.insertOne({student_id:"2021SSM004", name:"Keshan", age:27 ,gpa:3.7, degree:"SSM", skills:["MongoDB", "CSS", "JAVA"]})
+~~~
+
+![0 5 insertOne After Enter](https://github.com/user-attachments/assets/97131784-388e-4e0e-adcb-a058a7754935)
+
 
