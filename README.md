@@ -65,6 +65,7 @@ db.students.insertOne({student_id:"2021SSM004", name:"Keshan", age:27 ,gpa:3.7, 
 ![0 5 insertOne After Enter](https://github.com/user-attachments/assets/97131784-388e-4e0e-adcb-a058a7754935)
 
 
+
 **Insert Multiple Documents**
 
 **Using Compass**
