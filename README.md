@@ -105,6 +105,32 @@ db.students.deleteOne({name:"Behan"})
 
 ![10 DeleteOne output](https://github.com/user-attachments/assets/39ba7915-5210-4091-8bb9-eb36b2e45d64)
 
+**Delete Many**
+
+**Using Shell**
+
+~~~
+db.students.deleteMany({age:27})
+~~~
+
+![10 DeleteMany](https://github.com/user-attachments/assets/77ef703d-20ea-4947-94eb-9299b23dd14e)
+
+![10 DeleteMany Output](https://github.com/user-attachments/assets/8a452160-defa-45f1-854c-5f6aa03c07fb)
+
+**🔎 6. Find Data**
+
+**Find All Documents**
+
+**Using Shell**
+
+~~~
+db.students.find()
+~~~
+
+![11 Find](https://github.com/user-attachments/assets/3b9712d1-0ce4-4ba6-802e-27eb614b493d)
+
+
+
 
 
 
