@@ -41,7 +41,7 @@ db.createCollection("students")
 
 ![0 Create Collection](https://github.com/user-attachments/assets/12f73b1e-60bc-4f80-9e3c-3f402ca343af)
 
-**➕ 5. Insert Data**
+**➕ 4. Insert Data**
 
 **Insert One Document**
 
@@ -77,6 +77,34 @@ db.students.insertMany([{student_id:"2021IT003", name:"Sila", age:39 ,gpa:3.1, d
 ![1 5 insertMany Query](https://github.com/user-attachments/assets/a8cd64eb-435f-41a0-9220-322c8c617f1b)
 
 ![1 6 insertMany Output](https://github.com/user-attachments/assets/106a44f6-2945-4517-9ff9-ef75242b52c8)
+
+**🔄 5. Update Data**
+
+**Update One**
+
+**Using Shell**
+
+~~~
+db.students.updateOne({name:"Nipunika"},{$set:{gpa:3.8}})
+~~~
+
+![8 Updated](https://github.com/user-attachments/assets/4a3ccb13-f123-441d-951d-ecd4bbcdd450)
+
+![8 Updated Output](https://github.com/user-attachments/assets/bb4002d6-0c8d-4be8-aada-9b48336041a2)
+
+**🗑️ 6. Delete Data**
+
+**Delete One**
+
+**Using Shell**
+~~~
+db.students.deleteOne({name:"Behan"})
+~~~
+
+![10 DeleteOne](https://github.com/user-attachments/assets/776c7e2b-f4da-4e34-87d4-d18e33c65ce3)
+
+![10 DeleteOne output](https://github.com/user-attachments/assets/39ba7915-5210-4091-8bb9-eb36b2e45d64)
+
 
 
 
