@@ -117,7 +117,51 @@ db.students.deleteMany({age:27})
 
 ![10 DeleteMany Output](https://github.com/user-attachments/assets/8a452160-defa-45f1-854c-5f6aa03c07fb)
 
-**🔎 6. Find Data**
+**⚙️ 7. Query Operators**
+
+**Operator**
+
+$gt	Greater than
+~~~
+
+~~~
+
+$lt	Less than
+~~~
+
+~~~
+
+$gte	Greater than or equal
+~~~
+
+~~~
+
+$lte	Less than or equal
+~~~
+
+~~~
+
+$eq	Equal to
+~~~
+
+~~~
+
+$ne	Not equal to
+~~~
+
+~~~
+
+$in	Value in list
+~~~
+
+~~~
+
+$nin	Value not in list
+~~~
+
+~~~
+
+**🔎 8. Find Data**
 
 **Find All Documents**
 
@@ -128,6 +172,52 @@ db.students.find()
 ~~~
 
 ![11 Find](https://github.com/user-attachments/assets/3b9712d1-0ce4-4ba6-802e-27eb614b493d)
+
+**Find Specific Documents**
+
+**Using Shell**
+
+![11 FindOne](https://github.com/user-attachments/assets/3e392cfe-f241-4d65-acc9-a10384ef1d2b)
+
+**Find Specific Fields Only**
+
+**Using Shell**
+
+✅ Shows only the name, hides _id.
+
+![11 FindSpecific](https://github.com/user-attachments/assets/abe16184-e67f-401d-9fdf-7d751250ec1d)
+
+**🔽 9. Sort Data**
+
+**Sort by Ascending Order**
+
+**Using Compass**
+
+![12 Sort Compass](https://github.com/user-attachments/assets/4a554970-fa29-4445-9d38-e0dc801e8a28)
+
+**Using Shell**
+
+~~~
+db.students.find().sort({name:1})
+~~~
+
+![12 Sort Shell](https://github.com/user-attachments/assets/9f4491d3-354c-4aec-aea5-b6e2b0bec938)
+
+**Sort by Descending Order**
+
+**Using Compass**
+
+![12 Sort Compass D](https://github.com/user-attachments/assets/0f07718e-813f-4f34-9335-5a268fa6edcc)
+
+**Using Shell**
+
+~~~
+db.students.find().sort({age:-1})
+~~~
+
+![12 Sort Shell D](https://github.com/user-attachments/assets/1a1056b1-ae2a-4fb2-b24b-fdc392eb471a)
+
+
 
 
 
