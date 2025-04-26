@@ -7,7 +7,7 @@ It is used widely in modern web and mobile applications.
 
 **📂 2. Create a Database**
 
-**Using Compass**
+**🧭 Using Compass**
 
 Open MongoDB Compass ➡️ Click Create Database.
 
@@ -17,7 +17,7 @@ Open MongoDB Compass ➡️ Click Create Database.
 Click Create Database.
 ![0 Create DB](https://github.com/user-attachments/assets/feff0def-322b-4fb5-9e57-e71ff4b0d419)
 
-**Using Shell**
+**🖥️ Using Shell**
 
 ✅ This will create (or switch to) **unidb**.
 ~~~
@@ -28,12 +28,12 @@ use unidb
 
 **🗂️ 3. Create a Collection**
 
-**Using Compass**
+**🧭 Using Compass**
 
 Inside your database, click Create Collection ➡️ Name it **students**.
 ![0 1](https://github.com/user-attachments/assets/0674fd87-8a9a-4ff6-80cc-e96c030bd8bd)
 
-**Using Shell**
+**🖥️ Using Shell**
 
 ~~~
 db.createCollection("students")
@@ -45,7 +45,7 @@ db.createCollection("students")
 
 **Insert One Document**
 
-**Using Compass**
+**🧭 Using Compass**
 
 Go to users collection ➡️ Click Insert Document ➡️ Add:
 
@@ -56,7 +56,7 @@ Go to users collection ➡️ Click Insert Document ➡️ Add:
 ![0 6 insertOne Compass After Format](https://github.com/user-attachments/assets/6452b9de-5cf2-4ad5-b1ba-cd988544d770)
 
 
-**Using Shell**
+**🖥️ Using Shell**
 
 ~~~
 db.students.insertOne({student_id:"2021SSM004", name:"Keshan", age:27 ,gpa:3.7, degree:"SSM", skills:["MongoDB", "CSS", "JAVA"]})
@@ -68,7 +68,7 @@ db.students.insertOne({student_id:"2021SSM004", name:"Keshan", age:27 ,gpa:3.7, 
 
 **Insert Multiple Documents**
 
-**Using Compass**
+**🖥️ Using Shell**
 
 ~~~
 db.students.insertMany([{student_id:"2021IT003", name:"Sila", age:39 ,gpa:3.1, degree:"IT", skills:["MongoDB", "JAVA"]},{student_id:"2021SSM002", name:"Nanda", age:38 ,gpa:3.8, degree:"SSM", skills:["MongoDB", "NoSQL", "CSS", "JAVA"]}, {student_id:"2021IT004", name:"Kumari", age:20 ,gpa:3.3, degree:"IT", skills:["MongoDB", "CSS"]}])
@@ -82,7 +82,11 @@ db.students.insertMany([{student_id:"2021IT003", name:"Sila", age:39 ,gpa:3.1, d
 
 **Update One**
 
-**Using Shell**
+**🧭 Using Compass**
+
+
+
+**🖥️ Using Shell**
 
 ~~~
 db.students.updateOne({name:"Nipunika"},{$set:{gpa:3.8}})
@@ -96,7 +100,13 @@ db.students.updateOne({name:"Nipunika"},{$set:{gpa:3.8}})
 
 **Delete One**
 
-**Using Shell**
+**🧭 Using Compass**
+
+
+
+
+**🖥️ Using Shell**
+
 ~~~
 db.students.deleteOne({name:"Behan"})
 ~~~
@@ -107,7 +117,7 @@ db.students.deleteOne({name:"Behan"})
 
 **Delete Many**
 
-**Using Shell**
+**🖥️ Using Shell**
 
 ~~~
 db.students.deleteMany({age:27})
@@ -122,41 +132,97 @@ db.students.deleteMany({age:27})
 **Operator**
 
 $gt	Greater than
+
+**🧭 Using Compass**
+
+
+
+**🖥️ Using Shell**
+
 ~~~
 
 ~~~
 
 $lt	Less than
+
+**🧭 Using Compass**
+
+
+
+**🖥️ Using Shell**
+
 ~~~
 
 ~~~
 
 $gte	Greater than or equal
+
+**🧭 Using Compass**
+
+
+
+**🖥️ Using Shell**
+
 ~~~
 
 ~~~
 
 $lte	Less than or equal
+
+**🧭 Using Compass**
+
+
+
+**🖥️ Using Shell**
+
 ~~~
 
 ~~~
 
 $eq	Equal to
+
+**🧭 Using Compass**
+
+
+
+**🖥️ Using Shell**
+
 ~~~
 
 ~~~
 
 $ne	Not equal to
+
+**🧭 Using Compass**
+
+
+
+**🖥️ Using Shell**
+
 ~~~
 
 ~~~
 
 $in	Value in list
+
+**🧭 Using Compass**
+
+
+
+**🖥️ Using Shell**
+
 ~~~
 
 ~~~
 
 $nin	Value not in list
+
+**🧭 Using Compass**
+
+
+
+**🖥️ Using Shell**
+
 ~~~
 
 ~~~
@@ -165,7 +231,12 @@ $nin	Value not in list
 
 **Find All Documents**
 
-**Using Shell**
+**🧭 Using Compass**
+
+
+
+
+**🖥️ Using Shell**
 
 ~~~
 db.students.find()
@@ -175,13 +246,25 @@ db.students.find()
 
 **Find Specific Documents**
 
-**Using Shell**
+**🧭 Using Compass**
+
+
+
+
+
+**🖥️ Using Shell**
 
 ![11 FindOne](https://github.com/user-attachments/assets/3e392cfe-f241-4d65-acc9-a10384ef1d2b)
 
 **Find Specific Fields Only**
 
-**Using Shell**
+**🧭 Using Compass**
+
+
+
+
+
+**🖥️ Using Shell**
 
 ✅ Shows only the name, hides _id.
 
@@ -191,12 +274,11 @@ db.students.find()
 
 **Sort by Ascending Order**
 
-**Using Compass**
+**🧭 Using Compass**
 
 ![12 Sort Compass](https://github.com/user-attachments/assets/4a554970-fa29-4445-9d38-e0dc801e8a28)
 
-**Using Shell**
-
+**🖥️ Using Shell**
 ~~~
 db.students.find().sort({name:1})
 ~~~
@@ -205,12 +287,11 @@ db.students.find().sort({name:1})
 
 **Sort by Descending Order**
 
-**Using Compass**
+**🧭 Using Compass**
 
 ![12 Sort Compass D](https://github.com/user-attachments/assets/0f07718e-813f-4f34-9335-5a268fa6edcc)
 
-**Using Shell**
-
+**🖥️ Using Shell**
 ~~~
 db.students.find().sort({age:-1})
 ~~~
@@ -221,11 +302,11 @@ db.students.find().sort({age:-1})
 
 **Limit the Number of Results**
 
-**Using Compass**
+**🧭 Using Compass**
 
 ![13 Limit Compass](https://github.com/user-attachments/assets/6ae16c73-6493-4dbc-9eae-47d17c9161f4)
 
-**Using Shell**
+**🖥️ Using Shell**
 
 ~~~
 db.students.find().limit(2)
@@ -235,12 +316,11 @@ db.students.find().limit(2)
 
 **Skip Some Documents**
 
-**Using Compass**
+**🧭 Using Compass**
 
 ![13 1 Skip Compass](https://github.com/user-attachments/assets/1e60471a-e40a-4b5a-9f71-0b4065ae6237)
 
-**Using Shell**
-
+**🖥️ Using Shell**
 ~~~
 db.students.find().limit(2).skip(1)
 ~~~
