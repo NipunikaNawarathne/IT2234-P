@@ -217,8 +217,35 @@ db.students.find().sort({age:-1})
 
 ![12 Sort Shell D](https://github.com/user-attachments/assets/1a1056b1-ae2a-4fb2-b24b-fdc392eb471a)
 
+**➡️ 11. Limit and Skip**
 
+**Limit the Number of Results**
 
+**Using Compass**
+
+![13 Limit Compass](https://github.com/user-attachments/assets/6ae16c73-6493-4dbc-9eae-47d17c9161f4)
+
+**Using Shell**
+
+~~~
+db.students.find().limit(2)
+~~~
+
+![13 Limit Shell](https://github.com/user-attachments/assets/3f0c2a8e-0128-49e3-808d-83fcac176d23)
+
+**Skip Some Documents**
+
+**Using Compass**
+
+![13 1 Skip Compass](https://github.com/user-attachments/assets/1e60471a-e40a-4b5a-9f71-0b4065ae6237)
+
+**Using Shell**
+
+~~~
+db.students.find().limit(2).skip(1)
+~~~
+
+![13 1 Skip Shell](https://github.com/user-attachments/assets/b2e7f8a5-18d0-43f1-ab08-657220828460)
 
 
 
