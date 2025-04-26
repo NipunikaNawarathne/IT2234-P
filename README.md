@@ -8,6 +8,7 @@ It is used widely in modern web and mobile applications.
 **📂 2. Create a Database**
 
 **Using Compass**
+
 Open MongoDB Compass ➡️ Click Create Database.
 
 * Database Name: **unidb**
@@ -28,10 +29,12 @@ use unidb
 **🗂️ 3. Create a Collection**
 
 **Using Compass**
+
 Inside your database, click Create Collection ➡️ Name it **students**.
 ![0 1](https://github.com/user-attachments/assets/0674fd87-8a9a-4ff6-80cc-e96c030bd8bd)
 
 **Using Shell**
+
 ~~~
 db.createCollection("students")
 ~~~
