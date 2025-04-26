@@ -65,3 +65,18 @@ db.students.insertOne({student_id:"2021SSM004", name:"Keshan", age:27 ,gpa:3.7, 
 ![0 5 insertOne After Enter](https://github.com/user-attachments/assets/97131784-388e-4e0e-adcb-a058a7754935)
 
 
+**Insert Multiple Documents**
+
+**Using Compass**
+
+~~~
+db.students.insertMany([{student_id:"2021IT003", name:"Sila", age:39 ,gpa:3.1, degree:"IT", skills:["MongoDB", "JAVA"]},{student_id:"2021SSM002", name:"Nanda", age:38 ,gpa:3.8, degree:"SSM", skills:["MongoDB", "NoSQL", "CSS", "JAVA"]}, {student_id:"2021IT004", name:"Kumari", age:20 ,gpa:3.3, degree:"IT", skills:["MongoDB", "CSS"]}])
+~~~
+
+![1 5 insertMany Query](https://github.com/user-attachments/assets/a8cd64eb-435f-41a0-9220-322c8c617f1b)
+
+![1 6 insertMany Output](https://github.com/user-attachments/assets/106a44f6-2945-4517-9ff9-ef75242b52c8)
+
+
+
+
