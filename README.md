@@ -151,7 +151,7 @@ db.students.find({age:{$gt:29}})
 **🖥️ Using Shell**
 
 ~~~
-
+db.students.find({age:{$lt:29}})
 ~~~
 
 ![15 lt shell](https://github.com/user-attachments/assets/2e13e3c8-45f9-46e3-8918-6ba8fcf53cef)
@@ -167,7 +167,7 @@ db.students.find({age:{$gt:29}})
 **🖥️ Using Shell**
 
 ~~~
-
+db.students.find({age:{$gte:29}})
 ~~~
 
 ![15 gte shell](https://github.com/user-attachments/assets/b78f680c-8391-4884-a68a-d5871d97700f)
@@ -183,7 +183,7 @@ db.students.find({age:{$gt:29}})
 **🖥️ Using Shell**
 
 ~~~
-
+db.students.find({age:{$lte:29}})
 ~~~
 
 ![15 lte shell](https://github.com/user-attachments/assets/69c56d16-b495-4b7a-b006-37013a188819)
@@ -199,7 +199,7 @@ db.students.find({age:{$gt:29}})
 **🖥️ Using Shell**
 
 ~~~
-
+db.students.find({age:{$eq:29}})
 ~~~
 
 ![15 eq shell](https://github.com/user-attachments/assets/7dabe25d-a3bf-4369-b6ab-40e521b41574)
@@ -215,7 +215,7 @@ db.students.find({age:{$gt:29}})
 **🖥️ Using Shell**
 
 ~~~
-
+db.students.find({age:{$ne:29}})
 ~~~
 
 ![15 ne shell](https://github.com/user-attachments/assets/5e835bbc-c5c9-49fa-898b-bba8fd14a418)
@@ -233,7 +233,7 @@ db.students.find({age:{$gt:29}})
 **🖥️ Using Shell**
 
 ~~~
-
+db.students.find({skills:{$in:["JAVA"]}})
 ~~~
 
 ![15 in shell](https://github.com/user-attachments/assets/cdc78fc5-d903-4eb2-9691-3d4170d1a34c)
@@ -251,7 +251,7 @@ db.students.find({age:{$gt:29}})
 **🖥️ Using Shell**
 
 ~~~
-
+db.students.find({skills:{$nin:["JAVA"]}})
 ~~~
 
 ![15 nin shell](https://github.com/user-attachments/assets/a7de8044-ac5f-43c0-ae17-f8e8678e6a3a)
