@@ -68,7 +68,6 @@ db.students.insertOne({student_id:"2021SSM004", name:"Keshan", age:27 ,gpa:3.7, 
 ![0 5 insertOne After Enter](https://github.com/user-attachments/assets/97131784-388e-4e0e-adcb-a058a7754935)
 
 
-
 **Insert Multiple Documents**
 
 **🖥️ Using Shell**
@@ -261,11 +260,6 @@ db.students.find({skills:{$nin:["JAVA"]}})
 
 **Find All Documents**
 
-**🧭 Using Compass**
-
-
-
-
 **🖥️ Using Shell**
 
 ~~~
@@ -278,21 +272,19 @@ db.students.find()
 
 **🧭 Using Compass**
 
-
-
+![16 find document compass](https://github.com/user-attachments/assets/1e4be9d4-27e3-440c-9021-26b20b966b8e)
 
 
 **🖥️ Using Shell**
 
-![11 FindOne](https://github.com/user-attachments/assets/3e392cfe-f241-4d65-acc9-a10384ef1d2b)
+~~~
+db.students.find({degree:"HS"})
+~~~
+
+![16 find document](https://github.com/user-attachments/assets/7782f69a-76a5-46df-9fb0-822083b36db6)
+
 
 **Find Specific Fields Only**
-
-**🧭 Using Compass**
-
-
-
-
 
 **🖥️ Using Shell**
 
@@ -328,7 +320,7 @@ db.students.find().sort({age:-1})
 
 ![12 Sort Shell D](https://github.com/user-attachments/assets/1a1056b1-ae2a-4fb2-b24b-fdc392eb471a)
 
-**➡️ 11. Limit and Skip**
+## ➡️ 10. Limit and Skip
 
 **Limit the Number of Results**
 
