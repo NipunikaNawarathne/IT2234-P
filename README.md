@@ -125,7 +125,7 @@ db.students.deleteMany({age:27})
 
 **Operator**
 
-$gt	Greater than
+* $gt	Greater than
 
 **🧭 Using Compass**
 
@@ -135,10 +135,13 @@ $gt	Greater than
 **🖥️ Using Shell**
 
 ~~~
-
+db.students.find({age:{$gt:29}})
 ~~~
 
-$lt	Less than
+![15 gt shell](https://github.com/user-attachments/assets/792c5f4d-a3f3-4d93-a2af-5b9cc0643b14)
+
+
+* $lt	Less than
 
 **🧭 Using Compass**
 
@@ -151,7 +154,10 @@ $lt	Less than
 
 ~~~
 
-$gte	Greater than or equal
+![15 lt shell](https://github.com/user-attachments/assets/2e13e3c8-45f9-46e3-8918-6ba8fcf53cef)
+
+
+* $gte	Greater than or equal
 
 **🧭 Using Compass**
 
@@ -164,7 +170,10 @@ $gte	Greater than or equal
 
 ~~~
 
-$lte	Less than or equal
+![15 gte shell](https://github.com/user-attachments/assets/b78f680c-8391-4884-a68a-d5871d97700f)
+
+
+* $lte	Less than or equal
 
 **🧭 Using Compass**
 
@@ -177,7 +186,10 @@ $lte	Less than or equal
 
 ~~~
 
-$eq	Equal to
+![15 lte shell](https://github.com/user-attachments/assets/69c56d16-b495-4b7a-b006-37013a188819)
+
+
+* $eq	Equal to
 
 **🧭 Using Compass**
 
@@ -190,7 +202,10 @@ $eq	Equal to
 
 ~~~
 
-$ne	Not equal to
+![15 eq shell](https://github.com/user-attachments/assets/7dabe25d-a3bf-4369-b6ab-40e521b41574)
+
+
+* $ne	Not equal to
 
 **🧭 Using Compass**
 
@@ -203,7 +218,10 @@ $ne	Not equal to
 
 ~~~
 
-$in	Value in list
+![15 ne shell](https://github.com/user-attachments/assets/5e835bbc-c5c9-49fa-898b-bba8fd14a418)
+
+
+* $in	Value in list
 
 **🧭 Using Compass**
 
@@ -218,7 +236,10 @@ $in	Value in list
 
 ~~~
 
-$nin	Value not in list
+![15 in shell](https://github.com/user-attachments/assets/cdc78fc5-d903-4eb2-9691-3d4170d1a34c)
+
+
+* $nin	Value not in list
 
 **🧭 Using Compass**
 
@@ -232,6 +253,9 @@ $nin	Value not in list
 ~~~
 
 ~~~
+
+![15 nin shell](https://github.com/user-attachments/assets/a7de8044-ac5f-43c0-ae17-f8e8678e6a3a)
+
 
 ## 🔎 8. Find Data
 
