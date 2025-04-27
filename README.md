@@ -1,11 +1,11 @@
-**🛠️ 1. What is MongoDB?**
+## 🛠️ 1. What is MongoDB?
 
 MongoDB is a popular NoSQL database that stores data in flexible, JSON-like documents.
 It is used widely in modern web and mobile applications.
 * MongoDB Compass: A graphical interface for database management.
 * MongoDB Shell (mongosh): A command-line tool to interact with MongoDB.
 
-**📂 2. Create a Database**
+## 📂 2. Create a Database
 
 **🧭 Using Compass**
 
@@ -26,11 +26,12 @@ use unidb
 
 ![0 0](https://github.com/user-attachments/assets/0441f324-4201-476b-b211-ae36d503ddfd)
 
-**🗂️ 3. Create a Collection**
+## 🗂️ 3. Create a Collection
 
 **🧭 Using Compass**
 
 Inside your database, click Create Collection ➡️ Name it **students**.
+
 ![0 1](https://github.com/user-attachments/assets/0674fd87-8a9a-4ff6-80cc-e96c030bd8bd)
 
 **🖥️ Using Shell**
@@ -41,7 +42,7 @@ db.createCollection("students")
 
 ![0 Create Collection](https://github.com/user-attachments/assets/12f73b1e-60bc-4f80-9e3c-3f402ca343af)
 
-**➕ 4. Insert Data**
+## ➕ 4. Insert Data
 
 **Insert One Document**
 
@@ -50,9 +51,11 @@ db.createCollection("students")
 Go to users collection ➡️ Click Insert Document ➡️ Add:
 
 **insertOne** Before Formatting
+
 ![0 6 insertOne Compass](https://github.com/user-attachments/assets/10eefcd2-2cae-48fc-92a8-e9c55bd5cb56)
 
 **insertOne** After Formatting
+
 ![0 6 insertOne Compass After Format](https://github.com/user-attachments/assets/6452b9de-5cf2-4ad5-b1ba-cd988544d770)
 
 
@@ -78,13 +81,9 @@ db.students.insertMany([{student_id:"2021IT003", name:"Sila", age:39 ,gpa:3.1, d
 
 ![1 6 insertMany Output](https://github.com/user-attachments/assets/106a44f6-2945-4517-9ff9-ef75242b52c8)
 
-**🔄 5. Update Data**
+## 🔄 5. Update Data
 
 **Update One**
-
-**🧭 Using Compass**
-
-
 
 **🖥️ Using Shell**
 
@@ -96,14 +95,9 @@ db.students.updateOne({name:"Nipunika"},{$set:{gpa:3.8}})
 
 ![8 Updated Output](https://github.com/user-attachments/assets/bb4002d6-0c8d-4be8-aada-9b48336041a2)
 
-**🗑️ 6. Delete Data**
+## 🗑️ 6. Delete Data
 
 **Delete One**
-
-**🧭 Using Compass**
-
-
-
 
 **🖥️ Using Shell**
 
@@ -127,7 +121,7 @@ db.students.deleteMany({age:27})
 
 ![10 DeleteMany Output](https://github.com/user-attachments/assets/8a452160-defa-45f1-854c-5f6aa03c07fb)
 
-**⚙️ 7. Query Operators**
+## ⚙️ 7. Query Operators
 
 **Operator**
 
@@ -135,6 +129,7 @@ $gt	Greater than
 
 **🧭 Using Compass**
 
+![14 Greater Than](https://github.com/user-attachments/assets/4b87b6ea-8b52-49c5-a35a-417864de8eca)
 
 
 **🖥️ Using Shell**
@@ -147,6 +142,7 @@ $lt	Less than
 
 **🧭 Using Compass**
 
+![14 lt](https://github.com/user-attachments/assets/78ff3c8c-244e-46ba-bf54-f4ada00d09e4)
 
 
 **🖥️ Using Shell**
@@ -159,6 +155,7 @@ $gte	Greater than or equal
 
 **🧭 Using Compass**
 
+![14 gte](https://github.com/user-attachments/assets/fd46f89d-e932-4b54-903b-0da022155c88)
 
 
 **🖥️ Using Shell**
@@ -171,6 +168,7 @@ $lte	Less than or equal
 
 **🧭 Using Compass**
 
+![14 lte](https://github.com/user-attachments/assets/a3cd146f-fb75-4113-8daf-9115a33f17d2)
 
 
 **🖥️ Using Shell**
@@ -183,6 +181,7 @@ $eq	Equal to
 
 **🧭 Using Compass**
 
+![14 eq](https://github.com/user-attachments/assets/da1802bd-a331-474e-911f-f4b3b76e6dd9)
 
 
 **🖥️ Using Shell**
@@ -195,6 +194,7 @@ $ne	Not equal to
 
 **🧭 Using Compass**
 
+![14 ne](https://github.com/user-attachments/assets/829a9d19-d233-4b57-990d-86d2dc23ddda)
 
 
 **🖥️ Using Shell**
@@ -207,6 +207,9 @@ $in	Value in list
 
 **🧭 Using Compass**
 
+![14 in](https://github.com/user-attachments/assets/11653d3a-09fd-4e9e-9e81-28fea3e599c6)
+
+![14 in OR](https://github.com/user-attachments/assets/5072f685-03cd-41cf-9a16-cd5ec2df3f78)
 
 
 **🖥️ Using Shell**
@@ -219,6 +222,9 @@ $nin	Value not in list
 
 **🧭 Using Compass**
 
+![14 not in](https://github.com/user-attachments/assets/4c2b4070-64f8-46b0-b4fb-dbb3141f4c7c)
+
+![14 not in OR](https://github.com/user-attachments/assets/ab7759ad-90b5-4570-b101-6b16e55a8ed1)
 
 
 **🖥️ Using Shell**
@@ -227,7 +233,7 @@ $nin	Value not in list
 
 ~~~
 
-**🔎 8. Find Data**
+## 🔎 8. Find Data
 
 **Find All Documents**
 
@@ -270,7 +276,7 @@ db.students.find()
 
 ![11 FindSpecific](https://github.com/user-attachments/assets/abe16184-e67f-401d-9fdf-7d751250ec1d)
 
-**🔽 9. Sort Data**
+## 🔽 9. Sort Data
 
 **Sort by Ascending Order**
 
