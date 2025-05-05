@@ -93,7 +93,7 @@ Uses **.pretty()** to make the output easier to read.
 ## ❌ 8. Delete Many Documents
 
 ~~~
-
+db.degrees.deleteMany({duration: {$lt:4}})
 ~~~
 
 🧼 Deletes **all** documents where duration is **less than 4**.
@@ -102,7 +102,7 @@ Uses **.pretty()** to make the output easier to read.
 ## ✏️ 9. Update One Document
 
 ~~~
-
+db.degrees.updateOne({_id: ObjectId('68186757f9d8bb57d5f62e44')}, {$set:{name:'BCS', duration: 3}})
 ~~~
 
 🔧 Updates specific fields of **one** matching document.
@@ -112,7 +112,7 @@ Uses **.pretty()** to make the output easier to read.
 ## 🔼 10. Increase Field Value
 
 ~~~
-
+db.degrees.updateMany({duration: {$gte: 4}}, {$inc: {duration: 1}})
 ~~~
 
 ⏫ Increases `duration` by 1 where it's 4 or more.
@@ -122,7 +122,7 @@ Uses **.pretty()** to make the output easier to read.
 ## ➕ 11. Add Value to Array Field
 
 ~~~
-
+db.students.updateOne({regno:'2021IT005'}, {$push: {skills:'PHP'}})
 ~~~
 
 📦 Adds `'PHP'` to the **`skills`** array of a specific student.
