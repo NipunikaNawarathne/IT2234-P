@@ -1,7 +1,7 @@
 ## 🗃️ 1. Delete a Database
 
 ~~~
-
+db.dropDatabase()
 ~~~
 
 🧹 Deletes the **entire database**, including all collections and documents.
