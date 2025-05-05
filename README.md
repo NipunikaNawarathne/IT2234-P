@@ -11,17 +11,17 @@ db.dropDatabase()
 ## 📁 2. Delete a Collection (Table)
 
 ~~~
-
+db.sampledata.drop()
 ~~~
 
 🗑️ Removes a **collection** and all of its contents.
 
----
 
-## 📁 3. Delete Another Collection
+
+## 📁 3. Delete Another Collection Among Two Collections
 
 ~~~
-
+db.sample1.drop()
 ~~~
 
 🗑️ Same operation on a different collection.
@@ -31,40 +31,62 @@ db.dropDatabase()
 ## 🧾 4. Delete a Document
 
 ~~~
-
+db.degrees.deleteOne({_id:ObjectId('681857939a9091b61ab1f082')})
 ~~~
 
 🧽 Deletes **one** specific document matching the condition.
 
 
 
-## 🔍 5. Projection (Incorrect Syntax)
+## 🔍 5. Field Projection
 
 ~~~
-
+db.degrees.find({}, {name: 1, _id: 0})
 ~~~
 
-⚠️ ❌ Incorrect usage of projection — should be an object, not an array.
+📋 Shows only the name field from each document.
 
+🚫 Hides the _id field.
 
+🧠 Equivalent to: SELECT name FROM degrees in SQL.
 
-## 🔎 6. Projection (Incorrect Again)
-
+**If you want to show multiple fields, use:**
+~~~
+db.degrees.find({}, {name: 1, duration: 1, _id: 0})
 ~~~
 
+
+
+## 🔎 6. Field Projection
+
+~~~
+db.degrees.find({}, {name: 1, duration: 1, _id: 0})
 ~~~
 
-⚠️ ❌ Still incorrect — projection must use object format: `{name: 1, duration: 1}`
+📋 Shows both name and duration fields for each document.
+
+🚫 Hides the _id field.
+
+🧠 Equivalent to: SELECT name, duration FROM degrees in SQL.
+
 
 
 
 ## 🎯 7. Select Certain Fields
 
 ~~~
-
+db.degrees.find({}, {name: 1, _id:0}).pretty()
 ~~~
 
+🔍 What it does:
+
+Finds all documents in the degrees collection.
+
 📋 Shows only the **`name`** field — similar to SQL `SELECT name`.
+
+Uses **.pretty()** to make the output easier to read.
+
+
 
 
 
