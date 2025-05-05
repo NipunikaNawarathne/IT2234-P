@@ -1,0 +1,282 @@
+1. Delete database (sampledb)
+
+use sampledb
+switched to db sampledb
+
+db.dropDatabase()
+{ ok: 1, dropped: 'sampledb' }
+
+show databases
+admin   40.00 KiB
+config  72.00 KiB
+local   40.00 KiB
+unidb   96.00 KiB
+
+
+
+2. Delete tables/collections (checkdb)
+
+use checkdb
+switched to db checkdb
+
+db.sampledata.drop()
+true
+
+show databases
+admin   40.00 KiB
+config  72.00 KiB
+local   40.00 KiB
+unidb   96.00 KiB
+
+
+
+3. Delete tables/collections - ii
+
+use SampleDB1
+switched to db SampleDB1
+
+db.sample1.drop()
+true
+
+show databases
+SampleDB1    8.00 KiB
+admin       40.00 KiB
+config     108.00 KiB
+local       40.00 KiB
+unidb       96.00 KiB
+
+
+
+//In unidb => degrees
+
+4. Delete document
+
+use unidb
+switched to db unidb
+
+db.degrees.deleteOne({_id:ObjectId('681857939a9091b61ab1f082')})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+
+db.degrees.find()
+{
+  _id: ObjectId('681857939a9091b61ab1f083'),
+  name: 'B.Sc in Environmental Science',
+  duration: '4'
+}
+{
+  _id: ObjectId('681857939a9091b61ab1f084'),
+  name: 'B.Sc in Applied Mathematics',
+  duration: '4'
+}
+{
+  _id: ObjectId('681857939a9091b61ab1f085'),
+  name: 'B.Sc in Computer Science',
+  duration: '4'
+}
+
+
+
+5. 
+
+b.degrees.find().projection([{name: 1}, {_id: -1}])
+{
+  _id: ObjectId('681859559a9091b61ab1f086')
+}
+{
+  _id: ObjectId('681859559a9091b61ab1f087')
+}
+{
+  _id: ObjectId('681859559a9091b61ab1f088')
+}
+{
+  _id: ObjectId('681859559a9091b61ab1f089')
+}
+
+
+
+6. 
+
+db.degrees.find().projection(['name', 'duration'])
+{
+  _id: ObjectId('681859559a9091b61ab1f086'),
+  name: 'B.Sc in IT',
+  duration: '3'
+}
+{
+  _id: ObjectId('681859559a9091b61ab1f087'),
+  name: 'B.Sc in Environmental Science',
+  duration: '4'
+}
+{
+  _id: ObjectId('681859559a9091b61ab1f088'),
+  name: 'B.Sc in Applied Mathematics',
+  duration: '4'
+}
+{
+  _id: ObjectId('681859559a9091b61ab1f089'),
+  name: 'B.Sc in Computer Science',
+  duration: '4'
+}
+
+
+
+7. Select certian data from collections(like sql select)
+
+db.degrees.find({}, {name: 1, _id:0}).pretty()
+{
+  name: 'B.Sc in IT'
+}
+{
+  name: 'B.Sc in Environmental Science'
+}
+{
+  name: 'B.Sc in Applied Mathematics'
+}
+{
+  name: 'B.Sc in Computer Science'
+}
+
+
+
+8. Delete all the degrees duration below 4
+
+db.degrees.deleteMany({duration: {$lt:4}})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+
+db.degrees.find()
+{
+  _id: ObjectId('68186757f9d8bb57d5f62e42'),
+  name: 'B.Sc in Environmental Science',
+  duration: 4
+}
+{
+  _id: ObjectId('68186757f9d8bb57d5f62e43'),
+  name: 'B.Sc in Applied Mathematics',
+  duration: 4
+}
+{
+  _id: ObjectId('68186757f9d8bb57d5f62e44'),
+  name: 'B.Sc in Computer Science',
+  duration: 4
+}
+
+
+
+9. Update
+
+//Update One
+
+db.degrees.updateOne({_id: ObjectId('68186757f9d8bb57d5f62e44')}, {$set:{name:'BCS', duration: 3}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+db.degrees.findOne({_id: ObjectId('68186757f9d8bb57d5f62e44')})
+{
+  _id: ObjectId('68186757f9d8bb57d5f62e44'),
+  name: 'BCS',
+  duration: 3
+}
+
+db.degrees.find()
+{
+  _id: ObjectId('68186757f9d8bb57d5f62e42'),
+  name: 'B.Sc in Environmental Science',
+  duration: 4
+}
+{
+  _id: ObjectId('68186757f9d8bb57d5f62e43'),
+  name: 'B.Sc in Applied Mathematics',
+  duration: 4
+}
+{
+  _id: ObjectId('68186757f9d8bb57d5f62e44'),
+  name: 'BCS',
+  duration: 3
+}
+
+
+
+10. Increasing degree duration by 1 which degree duration is greater than or equal to 4
+
+db.degrees.updateMany({duration: {$gte: 4}}, {$inc: {duration: 1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+
+db.degrees.find()
+{
+  _id: ObjectId('681890869a9091b61ab1f09a'),
+  name: 'B.Sc in IT',
+  duration: 3
+}
+{
+  _id: ObjectId('681890869a9091b61ab1f09b'),
+  name: 'B.Sc in Environmental Science',
+  duration: 5
+}
+{
+  _id: ObjectId('681890869a9091b61ab1f09c'),
+  name: 'B.Sc in Applied Mathematics',
+  duration: 5
+}
+{
+  _id: ObjectId('681890869a9091b61ab1f09d'),
+  name: 'B.Sc in Computer Science',
+  duration: 5
+}
+
+
+
+//StudentDB
+
+11. $push elements (update)
+
+use unidb
+switched to db unidb
+
+db.students.updateOne({regno:'2021IT005'}, {$push: {skills:'PHP'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+db.students.findOne({regno: '2021IT005'})
+{
+  _id: ObjectId('68133cbd6f2a46f9c6e70a31'),
+  regno: '2021IT005',
+  name: 'Vendor',
+  age: 23,
+  degree: 'IT',
+  gpa: 3.9,
+  gender: 'Male',
+  skills: [
+    'Node',
+    'MySQL',
+    'MatLab',
+    'PHP'
+  ]
+}
+
+
+
+
+
+
