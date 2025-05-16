@@ -160,23 +160,135 @@ db.grades.insertMany([
 
 **How to display documents using MongoDB Shell or Compass.**
 
+🖥️ In MongoDB Compass:
 
+* Select your database.
+* Click each collection (“students” and “grades”).
+* Use the table view toggle in the UI to view in tabular format.
 
 # 👩‍🎓 Filter Female Students
 
-Query to find female students and show only name, age, and gender.
+**Query to find female students and show only name, age, and gender.**
+
+```
+db.students.find(
+  { gender: "Female" },
+  { _id: 0, name: 1, age: 1, gender: 1 }
+)
+```
+
+📝 Explanation:
+
+filter: { gender: "Female" }
+
+projection: show only name, age, gender, and hide _id
 
 # 📅 Find Students by Age & Enrollment
 
-Students younger than 22 and enrolled after 2020.
+**Students younger than 22 and enrolled after 2020.**
+
+```
+db.students.find(
+  {
+    age: { $lt: 22 },
+    enrollmentYear: { $gt: 2020 }
+  },
+  { _id: 0, name: 1, age: 1, enrollmentYear: 1 }
+)
+```
+
+💡 Notes:
+
+* $lt = less than
+* $gt = greater than
 
 # 🔗 Join Grades with Students ("Alice Johnson")
 
-Use $lookup to find grades of a specific student.
+**Use $lookup to find grades of a specific student.**
+
+```
+db.grades.aggregate([
+  {
+    $lookup: {
+      from: "students",
+      localField: "studentId",
+      foreignField: "_id",
+      as: "students"
+    }
+  },
+  { $unwind: "$students" },
+  { $match: { "students.name": "Alice Johnson" } }
+])
+```
+
+🧠 Explanation:
+
+$lookup joins grades with students by studentId = _id
+
+$unwind de-nests the array
+
+$match filters for Alice Johnson
+
 
 # 🧮 Count Students by Subject ("Mathematics")
 
-Aggregation to count how many students studied Mathematics.
+**Aggregation to count how many students studied Mathematics.**
+
+```
+db.grades.aggregate([
+  { $match: { subject: "Mathematics" } },
+  { $group: { _id: "$studentId" } },
+  { $count: "studentCount" }
+])
+```
+
+✔️ Summary:
+
+Filters Mathematics grades
+
+Groups by studentId to avoid duplicates
+
+Counts the unique students
 
 # 🧑‍🏫 Students with Grades in "Fall 2022"
-Join and filter to show students with grades in Fall 2022 term.
+
+**Join and filter to show students with grades in Fall 2022 term.**
+
+```
+db.grades.aggregate([
+  {
+    $match: { term: "Fall 2022" }
+  },
+  {
+    $lookup: {
+      from: "students",
+      localField: "studentId",
+      foreignField: "_id",
+      as: "student"
+    }
+  },
+  { $unwind: "$student" },
+  {
+    $project: {
+      _id: 0,
+      subject: 1,
+      score: 1,
+      term: 1,
+      studentName: "$student.name",
+      major: "$student.major"
+    }
+  }
+])
+```
+
+📝 Notes:
+
+Filters by term
+
+Joins with students
+
+Unwinds array to flatten result
+
+Projects desired fields
+
+
